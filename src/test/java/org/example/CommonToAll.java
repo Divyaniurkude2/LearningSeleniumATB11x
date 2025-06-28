@@ -2,6 +2,8 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,7 +15,7 @@ import java.time.Duration;
 
 public class CommonToAll {
 
-    public EdgeDriver driver;
+    public ChromeDriver driver;
 
     public void openBrowser(WebDriver driver,String url){
         driver.get(url);
@@ -38,9 +40,9 @@ public class CommonToAll {
     @BeforeTest
     public void setUp(){
 
-        EdgeOptions edgeOptions = new EdgeOptions();
+        ChromeOptions edgeOptions = new ChromeOptions();
         edgeOptions.addArguments("--guest");
-        driver = new EdgeDriver(edgeOptions);
+        driver = new ChromeDriver(edgeOptions);
 
     }
 
